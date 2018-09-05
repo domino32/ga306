@@ -1,0 +1,52 @@
+Write a function called rename_obj that takes a string as an argument to rename a selected Maya object.
+
+
+
+(Hint: use my_selection = maya.cmds.ls(selection=True) This assigns any selected objects in the scene to a list called “my_selection”.)
+Explain what a for loop is, and write a function that uses it to print the name of each object in a list.
+
+
+ a for loop is A while loop runs a block of code until (or "while") a condition is met. While Loops are based on a condition, for example "Print gallons of fuel while there is fuel in the tank"
+
+my_selection  = [name1, name2, name3, name4]
+
+my_selection = maya.cmds.ls(selection = True)
+
+for my_selection
+perform
+print(my_selection)
+
+
+
+(Hint: This list of objects could be called “my_selection”)
+Explain what the range command does, and write a function that uses it to print the numbers 0 through 9.
+the range function returns a numeric progression in a list
+my_selection = [0,1,2,3,4,5,6,7,8,9]
+print(range(10))
+
+
+
+Write a function called print_parents that takes a list of Maya objects as an arguments and prints each node and its parent node. - (Hint: use listRelatives command.)
+
+
+
+Create four objects in the scene. Cube, Sphere, Cylinder, Torus.
+Parent Torus under Cylinder. Then parent Cylinder under Sphere. Then parent Sphere under Cube.
+Use the example hierarchy below for the objects required for the print_parent function.
+( Torus > Cylinder > Sphere > Cube)
+Format a print statement using % notation that list the selected object and all of its parent nodes.
+(eg: “Selected Geometry: , Parents: ”)
+
+import maya.cmds.polyCube()
+import maya.cmds.polySphere()
+import maya.cmds.polyCylinder()
+import maya.cmds.polyTorus()
+
+cmds.parent( 'Sphere1', 'cube1', relative=True )
+cmds.parent( 'sphere1', 'cylinder1', relative=True )
+cmds.parent( 'cylinder1', 'torus1', relative=True )
+
+
+print("%s is parent to %s is parent to %s is parent to %s is parent to %s")
+
+
