@@ -1,0 +1,11 @@
+mc.ambientLight( 'Light', e=True, intensity=8 )
+
+
+mc.timer( s=True )
+ code being timed
+print "START: time this"
+for i in range (0, 50):
+	print ("time this "+str(i))
+	mc.play( state=False )
+print "END: time this"
+mc.timer( e=True )

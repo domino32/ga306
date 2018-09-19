@@ -1,0 +1,23 @@
+# key rotation
+
+import maya.cmds as mc
+        
+    mc.select( 'bladeJoint', selection=True )
+
+    mc.cutKey( ceilingConnecter, time=(0, 360), attribute='rotateY' )
+        
+    mc.setKeyframe( ceilingConnecter, time=0, attribute='rotateY', value=0 )
+        
+    mc.setKeyframe( ceilingConnecter, time=360, attribute='rotateY', value=359 )
+      
+    mc.keyTangent( 'bladeJoint', inTangentType='linear', outTangentType='linear' )
+        
+        #objectTypeResult = mc.objectType( objectName )
+        
+        #print '%s type' % (objectName, objectTypeResult )
+        
+    mc.select ( 'bladeJoint', clear=True)
+        
+    mc.play( forward=True )
+    
+    
